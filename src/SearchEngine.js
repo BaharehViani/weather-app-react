@@ -36,18 +36,21 @@ export default function SearchEngine() {
       </form>
 
       {weather && (
-        <ul>
-          <li>Temperature: {Math.round(weather.temperature.current)}°C</li>
-          <li>Description: {weather.condition.description}</li>
-          <li>Humidity: {weather.temperature.humidity}%</li>
-          <li>Wind: {weather.wind.speed} km/h</li>
-          <li>
-            <img
-              src={weather.condition.icon_url}
-              alt={weather.condition.icon}
-            />
-          </li>
-        </ul>
+        <div>
+          <h3>Weather in {weather.city}</h3>
+          <ul>
+            <li>Temperature: {Math.round(weather.temperature.current)}°C</li>
+            <li>Description: {weather.condition.description}</li>
+            <li>Humidity: {weather.temperature.humidity}%</li>
+            <li>Wind: {weather.wind.speed} km/h</li>
+            <li>
+              <img
+                src={weather.condition.icon_url}
+                alt={weather.condition.icon}
+              />
+            </li>
+          </ul>
+        </div>
       )}
     </div>
   );

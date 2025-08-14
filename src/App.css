@@ -1,19 +1,9 @@
 .App {
-  padding: 5px 40px;
+  max-width: 600px;
+  margin: 30px auto;
 }
 
-li {
-  padding: 5px;
-}
-
-ul li img {
-  vertical-align: middle;
-}
-
-input {
-  padding: 8px;
-}
-
-footer {
-  margin-top: 40px;
+.App footer {
+  font-size: 11px;
+  margin: 10px 0;
 }

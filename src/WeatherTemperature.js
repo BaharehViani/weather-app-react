@@ -17,6 +17,7 @@ export default function WeatherTemperature(props) {
     let fahrenheit = (props.celsius * 9) / 5 + 32;
     return Math.round(fahrenheit);
   }
+  
   if (unit === "celsius") {
     return (
       <div className="WeatherTemperature">

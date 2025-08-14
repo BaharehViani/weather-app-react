@@ -7,10 +7,11 @@ function App() {
       <div className="container">
         <Weather defaultCity="New York" />
         <footer>
-          <a href="https://github.com/BaharehViani/weather-app-react">
-            open-source
-          </a>{" "}
-          code, by <a href="https://github.com/BaharehViani">Bahareh Viani</a>
+          Made with ❤️ by{" "}
+          <a href="https://github.com/BaharehViani" target="_blank" rel="noreferrer">Bahareh Viani</a> |{" "}
+          <a href="https://github.com/BaharehViani/weather-app-react" target="_blank" rel="noreferrer">
+            GitHub Repo
+          </a>
         </footer>
       </div>
     </div>

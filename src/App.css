@@ -7,3 +7,11 @@
   font-size: 11px;
   margin: 10px 0;
 }
+
+.App footer a {
+  text-decoration: none;
+}
+
+.App footer a:hover {
+  text-decoration: underline;
+}

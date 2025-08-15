@@ -55,3 +55,9 @@
 .WeatherTemperature a:hover {
   text-decoration:underline
 }
+
+.WeatherTemperature .unit .active {
+  text-decoration: none;
+  cursor: default;
+  color: rgb(33, 33, 33);
+}

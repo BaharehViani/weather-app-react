@@ -9,6 +9,15 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
+  const popularCities = [
+    "London",
+    "New York",
+    "Tokyo",
+    "Dubai",
+    "Sydney",
+    "San Francisco",
+  ];
+
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -31,16 +40,31 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
-  function search() {
+  function search(selectedCity) {
+    const cityToSearch = selectedCity || city;
     const apiKey = "4bada4e2ef8cba4745bcdtf450236obd";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityToSearch}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse).catch((error) => {
+      console.error("Error fetching weather data:", error);
+      alert("City not found. Please try again.");
+    });
   }
 
   if (weatherData.ready) {
     return (
       <UnitProvider>
         <div className="Weather">
+          <div className="popular-cities">
+            {popularCities.map((popularCity) => (
+              <button
+                key={popularCity}
+                className="btn btn-outline-secondary me-2 mb-2"
+                onClick={() => search(popularCity)}
+              >
+                {popularCity}
+              </button>
+            ))}
+          </div>
           <form onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-9">

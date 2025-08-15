@@ -9,7 +9,7 @@ export default function WeatherForecast(props) {
 
   useEffect(() => {
     setLoaded(false);
-  }, [props.coordinates]);
+  }, [props.city]);
 
   function handleResponse(response) {
     setForecast(response.data.daily);
@@ -17,10 +17,10 @@ export default function WeatherForecast(props) {
   }
 
   function load() {
-    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    let longitude = props.coordinates.lon;
-    let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    const apiKey = "4bada4e2ef8cba4745bcdtf450236obd";
+    // let longitude = props.coordinates.lon;
+    // let latitude = props.coordinates.lat;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
   }

@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather defaultCity="New York" />
+        <Weather defaultCity="Tabriz" />
         <footer>
           Made with ❤️ by{" "}
           <a href="https://github.com/BaharehViani" target="_blank" rel="noreferrer">Bahareh Viani</a> |{" "}

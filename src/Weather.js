@@ -15,7 +15,7 @@ export default function Weather(props) {
     "Tokyo",
     "Dubai",
     "Sydney",
-    "San Francisco",
+    "Paris",
   ];
 
   function handleResponse(response) {
